@@ -38,13 +38,8 @@ class Question {
         answers = json["answers"] as! [String]
         correctAnswer = json["correctAnswer"] as! String
         imageName = json["image"] as! String
-        
+        assert(UIImage(named: imageName) != nil)
     }
-    
-    
-    
-    
-    
     
     //метод для проверки одного из вариантов ответа
     func isCorrectAnswer(variant:String) -> Bool {
