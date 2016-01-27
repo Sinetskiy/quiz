@@ -16,6 +16,7 @@
 		4F031B3D1C4FF9BF0045877C /* ViewWilthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F031B3C1C4FF9BF0045877C /* ViewWilthButton.swift */; };
 		4FD891D81C591FF300CACA99 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FD891D71C591FF300CACA99 /* animals.json */; };
 		4FD891DA1C592BF000CACA99 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD891D91C592BF000CACA99 /* ResultViewController.swift */; };
+		4FD891DC1C593B7800CACA99 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD891DB1C593B7800CACA99 /* SelectQuizViewController.swift */; };
 		F540E7441C514F2300B3D3C0 /* cinema.json in Resources */ = {isa = PBXBuildFile; fileRef = F540E7431C514F2300B3D3C0 /* cinema.json */; };
 		F5B409F21C5148FA000200BD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B409F11C5148FA000200BD /* StoreManager.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		4F031B3C1C4FF9BF0045877C /* ViewWilthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWilthButton.swift; sourceTree = "<group>"; };
 		4FD891D71C591FF300CACA99 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; lineEnding = 0; path = animals.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4FD891D91C592BF000CACA99 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4FD891DB1C593B7800CACA99 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
 		F540E7431C514F2300B3D3C0 /* cinema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cinema.json; sourceTree = "<group>"; };
 		F5B409F11C5148FA000200BD /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 				F540E7431C514F2300B3D3C0 /* cinema.json */,
 				4F031B261C4FEB980045877C /* AppDelegate.swift */,
 				4F031B2A1C4FEB980045877C /* Main.storyboard */,
+				4FD891DB1C593B7800CACA99 /* SelectQuizViewController.swift */,
 				4F031B3C1C4FF9BF0045877C /* ViewWilthButton.swift */,
 				4F031B2D1C4FEB980045877C /* Assets.xcassets */,
 				4FD891D91C592BF000CACA99 /* ResultViewController.swift */,
@@ -161,6 +164,7 @@
 				4F031B391C4FEFDD0045877C /* QuizViewController.swift in Sources */,
 				4F031B3D1C4FF9BF0045877C /* ViewWilthButton.swift in Sources */,
 				4FD891DA1C592BF000CACA99 /* ResultViewController.swift in Sources */,
+				4FD891DC1C593B7800CACA99 /* SelectQuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
