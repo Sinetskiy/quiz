@@ -52,10 +52,6 @@ class StoreManager  {
             print("Oopps did not get objects from data:\(error)")
             return nil
         }
-        
-        
-        
-        
         //return [question]
     }
 }

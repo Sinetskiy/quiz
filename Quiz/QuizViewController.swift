@@ -48,6 +48,10 @@ class QuizViewController: UIViewController {
     }
     
     func setupModel() {
+        if victorine != nil {
+            question = victorine?.first
+            return
+        }
         let storeManager = StoreManager()
         
         victorine = storeManager.loadQuestionsByTheme("theme")
