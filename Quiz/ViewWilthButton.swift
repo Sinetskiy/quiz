@@ -34,11 +34,53 @@ class ViewWilthButton: UIView {
     
     func show(show:Bool, animated:Bool){
         
-        let duration:NSTimeInterval = animated ? 1 : 0
+        let duration:NSTimeInterval = animated ? 0.3 : 0
+        let backgroundColor = show ? UIColor.whiteColor() : UIColor.blackColor()
+        
+        //Анимация вьюхи, на которой лежат все остальные вьюхи
         UIView.animateWithDuration(duration) { () -> Void in
             let alpha = show ? 1 : 0
             self.alpha = CGFloat(alpha)
+            self.backgroundColor = backgroundColor
         }
+        
+        
+        //Показать заголовок
+        let titleDuration:NSTimeInterval = animated ? 0.25 : 0
+        
+        UIView.animateWithDuration(titleDuration, animations: { () -> Void in
+             self.topText.alpha = show ? 1 : 0
+            })
+            { (completed) -> Void in
+                
+                //по завершении первой анимации, запустим следующую
+                UIView.animateWithDuration(titleDuration, animations: { () -> Void in
+                    
+                    //по завершении показа заголовка, отобразим картинку
+                    //изменим ее масштаб по горизонтали и вертиали
+                    let scale:CGFloat = show ? 1.2 : 0.001
+                    let transform = CGAffineTransformMakeScale(scale, scale)
+                    self.imageView.transform = transform
+                })
+                    {(completed) -> Void in
+                    
+                        
+                        //приведем картинку к исходному размеру, если ее нужно показать
+                        let finalScaleDuration = animated ? 0.1 : 0
+                        UIView.animateWithDuration(finalScaleDuration,
+                            animations: { () -> Void in
+                            // получилось, что для показа изображения мы сначала чуть расширили,
+                            // а потом уменьшили картинку
+                            let finalScale:CGFloat = show ? 1.0 : 0.001
+                            let transform = CGAffineTransformMakeScale(finalScale, finalScale)
+                            self.imageView.transform = transform
+
+                        })
+                }
+                
+            }
+        
+        
     }
     
     func updateTopText(text:String){
