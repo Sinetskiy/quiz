@@ -38,10 +38,13 @@ class ViewWilthButton: UIView {
         let backgroundColor = show ? UIColor.whiteColor() : UIColor.blackColor()
         
         //Анимация вьюхи, на которой лежат все остальные вьюхи
-        UIView.animateWithDuration(duration) { () -> Void in
+        UIView.animateWithDuration(duration, animations: { () -> Void in
             let alpha = show ? 1 : 0
             self.alpha = CGFloat(alpha)
             self.backgroundColor = backgroundColor
+            
+            }) {(completed) -> Void in
+            self.showButtons(show, animated: animated)
         }
         
         
@@ -79,8 +82,32 @@ class ViewWilthButton: UIView {
                 }
                 
             }
+    }
+    
+    func showButtons(show:Bool, animated:Bool) {
         
+        let shiftXLeft  =  show ? 0 : -self.button1.frame.size.width
+        let shiftXRight = -shiftXLeft
+        let duration    =  animated ? 4.0 : 0
         
+        move(button1,toTranslation: shiftXLeft,withDuration: duration, options:   [.CurveEaseIn] )
+        move(button3, toTranslation: shiftXLeft, withDuration: duration, options: [.CurveEaseOut])
+        
+        move(button2, toTranslation: shiftXRight, withDuration: duration, options: [.CurveLinear])
+        move(button4, toTranslation: shiftXRight, withDuration: duration, options: [.CurveEaseInOut])
+    
+    }
+    
+    func move(button:UIButton, toTranslation:CGFloat, withDuration:NSTimeInterval, options:UIViewAnimationOptions){
+        
+        UIView.animateWithDuration(withDuration,
+            delay: 0,
+            options: options,
+            animations: { () -> Void in
+                let transform = CGAffineTransformMakeTranslation(toTranslation, 0)
+                button.transform = transform
+            },
+            completion: nil)
     }
     
     func updateTopText(text:String){

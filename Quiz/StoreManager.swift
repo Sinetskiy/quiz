@@ -11,8 +11,6 @@ import UIKit
 class StoreManager  {
     func loadQuestionsByTheme(themeName:String) -> [Question]? {
 
-//        let path = NSBundle.mainBundle().pathForResource("animals", ofType: "json")
-        
         //найдем путь к файлу с информацией о викторине
         let path = NSBundle.mainBundle().pathForResource("cinema", ofType: "json")
         

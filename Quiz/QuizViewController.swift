@@ -51,6 +51,11 @@ class QuizViewController: UIViewController {
         quizView.show(true, animated: true)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        quizView.show(false, animated: true)
+    }
+    
     func prepareToAnimate(){
         quizView.show(false, animated:false)
     }
