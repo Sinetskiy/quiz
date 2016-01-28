@@ -32,6 +32,15 @@ class ViewWilthButton: UIView {
         delegate?.buttonWithTitlePressed(button.titleForState(UIControlState.Normal)!)
     }
     
+    func show(show:Bool, animated:Bool){
+        
+        let duration:NSTimeInterval = animated ? 1 : 0
+        UIView.animateWithDuration(duration) { () -> Void in
+            let alpha = show ? 1 : 0
+            self.alpha = CGFloat(alpha)
+        }
+    }
+    
     func updateTopText(text:String){
         topText.text = text
     }

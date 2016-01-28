@@ -32,10 +32,30 @@ class QuizViewController: UIViewController {
     }
     
     //MARK: - View LifeCycle
+    
+
+    //В этот момент лучше всего занятся загрузкой требовательных операций
+    //чего-то, что потребует большого количества времени
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        prepareToAnimate()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        quizView.show(true, animated: true)
+    }
+    
+    func prepareToAnimate(){
+        quizView.show(false, animated:false)
+    }
+    
+    
     
     //MARK: - Setup
     func setup() {
